@@ -1,9 +1,11 @@
 <h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>My Projects</h2>
 <p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">GitHub repositories that I've built.</p>
 <div class="d-sm-flex flex-wrap gutter-condensed mb-4">
-  {% for repository in site.github.public_repositories limit: 9 %}
-    <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
-      {% include repo-card.html %}
-    </div>
+  {% for repository in site.github.public_repositories %}
+    {% if repository.full_name == 'Bo-Duke/vscode-icon-generator' or repository.full_name == 'Bo-Duke/IsThePlayStoreAvailableYet' or repository.full_name == 'Bo-Duke/Bo-Duke.github.io' or repository.full_name == 'Bo-Duke/Manu-Auto-Correct' or repository.full_name == 'RegardsOss/regards-frontend' or repository.full_name == 'Bo-Duke/MaterialNewTab' or %}
+      <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+        {% include repo-card.html %}
+      </div>
+    {% endif %}
   {% endfor %}
 </div>
